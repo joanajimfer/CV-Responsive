@@ -1,0 +1,158 @@
+/*Reset styles*/
+*{
+    margin: 0;
+    display: block;
+    padding: 0;
+}
+
+title, script{
+    display: none;
+}
+body{
+    margin: 2rem 3rem;
+}
+
+/*Decoration styles*/
+header{
+    background-color: #424242;
+    color: #FEFFEA;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+header, body{
+    font-family: 'Roboto', sans-serif;
+}
+.section--title{
+    background-color: #A3A3A3;
+    padding: .5rem .5rem;
+    color: #FEFFEA;
+}
+.section--wrapper{
+    background-color: #C9C9C9;
+    border: 1px solid transparent;
+    margin-bottom: 1rem;
+    transition: .4s all;
+}
+.section--wrapper:hover{
+    background-color: #FEFFEA;
+    border: 1px solid #C9C9C9;
+    transform: translateY(-10px);
+}
+.section--wrapper:hover .section--title{
+    background-color: #C9C9C9;
+    color: #FEFFEA;
+}
+
+
+/*Styles for 600px max (default style)*/
+.header--title{
+    margin-bottom: 2rem;
+}
+.section--title{
+    position: relative;
+}
+.section--title::after{
+    content: '';
+    width: 100%;
+    display: inline-block;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #424242;
+}
+.section--list{
+    margin: 1rem .5rem;
+}
+.item--content{
+    font-weight: 600;
+}
+.item--date{
+    color: #3C3344;
+}
+.item--wrap{
+    line-height: 125%;
+}
+
+/*Styles for 600px to 1200px*/
+@media only screen and (min-width: 600px) {
+    .curriculum{
+        display: flex;
+    }
+    .section--title{
+        font-size: 1.2rem;
+    }
+    .section--wrapper__data{
+        margin-right: 1rem;
+        width: 30%;
+    }
+    .section--wrapper__data .item--wrap{
+        margin-bottom: .5rem;
+    }
+    .section--wrapper__info{
+        width: calc(70% - 1rem);
+        margin-left: 1rem;
+    }
+    .section--wrapper__info .item--wrap{
+        display: flex;
+        margin-left: 2rem;
+        position: relative;
+    }
+    .section--wrapper__info .item--wrap:before{
+        position: absolute;
+        content: '';
+        background-color: #3C3344;
+        height: 4px;
+        width: 4px;
+        left: -1rem;
+        display: inline-block;
+        border-radius: 50%;
+        top: .4rem;
+    }
+    .section--wrapper__info .item--content{
+        margin-left: .8rem;
+    } 
+}
+
+/*Styles for more than 1200px*/
+@media only screen and (min-width: 1200px) {
+    .section--title::after{
+        display: none;
+    }
+    .section--wrapper__info{
+        display: flex;
+        width: 66%;
+    }
+    .section--wrapper__data{
+        width: calc(33% - 1rem);
+    }
+    .section--wrapper__data .item--wrap{
+        display: flex;
+        margin-bottom: 0;
+        margin-left: 2rem;
+        position: relative;
+    }
+    .section--wrapper__data .item--wrap:before{
+        position: absolute;
+        background-color: #424242;
+        content: '';
+        height: 4px;
+        width: 4px;
+        left: -1rem;
+        display: inline-block;
+        border-radius: 50%;
+        top: .4rem;
+    }
+    .section--wrapper__data .item--content{
+        margin-left: .8rem;
+    } 
+    .section--wrapper__studies{
+        width: calc(50% - 1rem);
+        margin-right: 1rem;
+    }
+    .section--wrapper__experience{
+        width: calc(50% - 1rem);
+        margin-left: 1rem;
+    }
+
+}
